@@ -1,0 +1,68 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/Thomas-Ulrich/rapid-earthquake-dynamics:
+      branch: main
+      repo: https://github.com/Thomas-Ulrich/rapid-earthquake-dynamics
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics git:
+        commands:
+        - /usr/bin/env sh .sqa/script.gloppy-turquoise-liger.sh
+        container: qc.acc_scaly-sepia-turtle
+  QC.Doc:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.woozy-xanthic-bison.sh
+        container: qc.doc_boozy-vermilion-eel
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics git:
+        commands:
+        - /usr/bin/env sh .sqa/script.gamy-chartreuse-leopard.sh
+        container: qc.doc_skanky-red-zorse
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-magenta-bullfrog.sh
+        container: qc.doc_sunny-azure-ant
+  QC.Lic:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.messy-violet-ant.sh
+        container: qc.lic_baggy-saffron-anteater
+  QC.Sec:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.shabby-champagne-frise.sh
+        container: qc.sec_lumpy-peach-peccary
+  QC.Sty:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.wimpy-cardinal-antelope.sh
+        container: qc.sty_hilly-saffron-dodo
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.ready-cerise-burmese.sh
+        container: qc.sty_jumpy-sapphire-dragonfly
+  QC.Uni:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.pasty-celadon-beaver.sh
+        container: qc.uni_crabby-salmon-dog
+  QC.Ver:
+    repos:
+      github.com/Thomas-Ulrich/rapid-earthquake-dynamics get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.lanky-bronze-akbash.sh
+        container: qc.ver_scummy-persimmon-dollar
+timeout: 5400
