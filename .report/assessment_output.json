@@ -1,0 +1,1859 @@
+{
+    "meta": {
+        "version": "3.5.0",
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas/main/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas/main/.report/assessment_output.json",
+        "timestamp": 1749200892.3321111
+    },
+    "repository": [
+        {
+            "url": "https://github.com/Thomas-Ulrich/rapid-earthquake-dynamics",
+            "name": "Thomas-Ulrich/rapid-earthquake-dynamics",
+            "tag": "main",
+            "commit_id": "ebdb5c99775e6310423fba007e1f28b198e0757a",
+            "is_main_repo": true,
+            "avatar_url": "https://avatars.githubusercontent.com/u/13536910?v=4",
+            "description": null,
+            "languages": null,
+            "topics": null,
+            "stargazers_count": null,
+            "watchers_count": null,
+            "contributors_count": null,
+            "forks_count": null,
+            "badge_status": "no_badge"
+        }
+    ],
+    "report": {
+        "QC.Acc": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Acc01": {
+                    "description": "Is the source code managed with a Version Control System?",
+                    "requirement_level": "MUST",
+                    "hint": "The source code shall be managed with Git and remain publicly available for this criterion to be successful. Please check <a href=\"https://git-scm.com/book/es/v2\" target=\"_blank\">Pro Git</a> docs about how to get started using Git tool. Guidelines provided by the most popular social coding platforms (<a href=\"https://docs.github.com/get-started\" target=\"_blank\">GitHub</a>, <a href=\"https://about.gitlab.com/get-started/\" target=\"_blank\">GitLab</a>) are also a good starting point",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code uses Git for version control",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": "scm",
+                                "version": "2.34.1",
+                                "docker": {
+                                    "image": "bitnami/git:2.34.1",
+                                    "reviewed": "2021-12-30"
+                                },
+                                "ci": {
+                                    "name": "QC.Acc github.com/Thomas-Ulrich/rapid-earthquake-dynamics git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/34/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Doc": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/Thomas-Ulrich/rapid-earthquake-dynamics find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 1482}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 1482
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/Thomas-Ulrich/rapid-earthquake-dynamics find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 1482}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 1482
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CONTRIBUTING file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/Thomas-Ulrich/rapid-earthquake-dynamics find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 1482}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 1482
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc01.1": {
+                    "description": "Are docs managed in the same repository as code?",
+                    "requirement_level": "MAY",
+                    "hint": "This subcriterion will succeed if the documentation files exist on the same repository as the source code, e.g. under a <code>docs/</code> folder",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Documentation resides in the same repository as code",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": null,
+                                "version": null,
+                                "docker": null,
+                                "ci": {
+                                    "name": "QC.Doc github.com/Thomas-Ulrich/rapid-earthquake-dynamics git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/52/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc02.X": {
+                    "description": "Are docs following a style for the Markdown markup language?",
+                    "requirement_level": "MAY",
+                    "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-markdownlint",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "markdownlint",
+                                "lang": "Markdown",
+                                "version": "0.11.0",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/markdownlint/Dockerfile",
+                                    "reviewed": "1970-01-01"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/Thomas-Ulrich/rapid-earthquake-dynamics markdownlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "mdl --json  ."
+                                    ],
+                                    "stdout_text": "[{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":25,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":48,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"},{\"filename\":\"./kinematic_models/README.md\",\"line\":6,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./kinematic_models/README.md\",\"line\":4,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/61/log?consoleFull"
+                                },
+                                "level": "RECOMMENDED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "./README.md": {
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            7
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            5,
+                                            25
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            48
+                                        ]
+                                    }
+                                },
+                                "./kinematic_models/README.md": {
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            6
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            4
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 40,
+                "total_subcriteria": 5,
+                "success_subcriteria": 2
+            }
+        },
+        "QC.Lic": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Lic01": {
+                    "description": "Is code licensed to be freely used, modified and distributed by others?",
+                    "requirement_level": "MUST",
+                    "hint": "<p>Your source code repository shall be distributed under an open source license for this subcriterion to pass successfully. Be sure to have a license file present in the code repository matching the name <code>LICENSE</code> with optional extensions (depending on the format used): <code>[.md|.rst|.txt]</code>.</p><p>Valid licenses are any of those approved either by the <a href=\"https://opensource.org/licenses\" target=\"_blank\">Open Source Initiative</a> and/or the Free Software Foundation <a href=\"https://www.gnu.org/licenses/license-list.html\" target=\"_blank\"></a>. You can also check the <a href=\"https://choosealicense.com/\" target=\"_blank\">choosealicense.com</a> site</p>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "An Open Source license found in the code repository: MIT",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/Thomas-Ulrich/rapid-earthquake-dynamics licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright 2024 Thomas Ulrich\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright 2024 Thomas Ulrich\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright 2024 Thomas Ulrich\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright 2024 Thomas Ulrich"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Lic01.1": {
+                    "description": "Is LICENSE file placed in the root path of the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "Most social coding platforms require the license file to placed in the root path of the code repository, so it is a good practice to use this location by default. Allowed file names are <code>LICENSE</code>, <code>LICENSE.md</code>, <code>LICENSE.rst</code>, <code>LICENSE.txt</code>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "LICENSE file is visible at the root path of the code repository: LICENSE",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/Thomas-Ulrich/rapid-earthquake-dynamics licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright 2024 Thomas Ulrich\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright 2024 Thomas Ulrich\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright 2024 Thomas Ulrich\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright 2024 Thomas Ulrich"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Lic02": {
+                    "description": "Does the code use a license approved by Open Source Initiative?",
+                    "requirement_level": "MUST",
+                    "hint": "The <a href=\"https://opensource.org/\" target=\"_blank\">Open Source Initiative (OSI)</a> sets out the requirements for software to be legally declared as Open Source. The license in use shall be in the list of <a href=\"https://opensource.org/license-list.html\" target=\"_blank\">OSI-approved licenses</a> for this criterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "License MIT is approved by the Open Source Initiative",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/Thomas-Ulrich/rapid-earthquake-dynamics licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright 2024 Thomas Ulrich\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright 2024 Thomas Ulrich\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright 2024 Thomas Ulrich\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright 2024 Thomas Ulrich"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Lic02.1": {
+                    "description": "Does the code use an Open Source Initiative's popular-recognized license?",
+                    "requirement_level": "MAY",
+                    "hint": "The Open Source Initiative (OSI) sets out the requirements for software to be legally declared as Open Source. OSI provides a list of popular licenses that shall match most of the demands. The license in use shall be in the list of <a href=\"https://opensource.org/license-list.html\" target=\"_blank\">OSI popular licenses</a> for this criterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "License MIT is listed under the Open Source Initiative popular category",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-licensee",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "licensee",
+                                "lang": "license",
+                                "version": "9.17.0",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-licensee:9.17.0",
+                                    "reviewed": "2021-06-28"
+                                },
+                                "ci": {
+                                    "name": "QC.Lic github.com/Thomas-Ulrich/rapid-earthquake-dynamics licensee",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "licensee detect . --confidence 60 --json "
+                                    ],
+                                    "stdout_text": "{\"licenses\":[{\"key\":\"mit\",\"spdx_id\":\"MIT\",\"meta\":{\"title\":\"MIT License\",\"source\":\"https://spdx.org/licenses/MIT.html\",\"description\":\"A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.\",\"how\":\"Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.\",\"using\":{\"Babel\":\"https://github.com/babel/babel/blob/master/LICENSE\",\".NET\":\"https://github.com/dotnet/runtime/blob/main/LICENSE.TXT\",\"Rails\":\"https://github.com/rails/rails/blob/master/MIT-LICENSE\"},\"featured\":true,\"hidden\":false,\"nickname\":null,\"note\":null},\"url\":\"http://choosealicense.com/licenses/mit/\",\"rules\":{\"permissions\":[{\"tag\":\"commercial-use\",\"label\":\"Commercial use\",\"description\":\"The licensed material and derivatives may be used for commercial purposes.\"},{\"tag\":\"modifications\",\"label\":\"Modification\",\"description\":\"The licensed material may be modified.\"},{\"tag\":\"distribution\",\"label\":\"Distribution\",\"description\":\"The licensed material may be distributed.\"},{\"tag\":\"private-use\",\"label\":\"Private use\",\"description\":\"The licensed material may be used and modified in private.\"}],\"conditions\":[{\"tag\":\"include-copyright\",\"label\":\"License and copyright notice\",\"description\":\"A copy of the license and copyright notice must be included with the licensed material.\"}],\"limitations\":[{\"tag\":\"liability\",\"label\":\"Liability\",\"description\":\"This license includes a limitation of liability.\"},{\"tag\":\"warranty\",\"label\":\"Warranty\",\"description\":\"This license explicitly states that it does NOT provide any warranty.\"}]},\"fields\":[{\"name\":\"year\",\"description\":\"The current year\"},{\"name\":\"fullname\",\"description\":\"The full name or username of the repository owner\"}],\"other\":false,\"gpl\":false,\"lgpl\":false,\"cc\":false}],\"matched_files\":[{\"filename\":\"LICENSE\",\"content\":\"MIT License\\n\\nCopyright 2024 Thomas Ulrich\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\\n\",\"content_hash\":\"4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9\",\"content_normalized\":\"permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.\",\"matcher\":{\"name\":\"exact\",\"confidence\":100},\"matched_license\":\"MIT\",\"attribution\":\"Copyright 2024 Thomas Ulrich\"}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/70/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "licenses": [
+                                    {
+                                        "key": "mit",
+                                        "spdx_id": "MIT",
+                                        "meta": {
+                                            "title": "MIT License",
+                                            "source": "https://spdx.org/licenses/MIT.html",
+                                            "description": "A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.",
+                                            "how": "Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.",
+                                            "using": {
+                                                "Babel": "https://github.com/babel/babel/blob/master/LICENSE",
+                                                ".NET": "https://github.com/dotnet/runtime/blob/main/LICENSE.TXT",
+                                                "Rails": "https://github.com/rails/rails/blob/master/MIT-LICENSE"
+                                            },
+                                            "featured": true,
+                                            "hidden": false,
+                                            "nickname": null,
+                                            "note": null
+                                        },
+                                        "url": "http://choosealicense.com/licenses/mit/",
+                                        "rules": {
+                                            "permissions": [
+                                                {
+                                                    "tag": "commercial-use",
+                                                    "label": "Commercial use",
+                                                    "description": "The licensed material and derivatives may be used for commercial purposes."
+                                                },
+                                                {
+                                                    "tag": "modifications",
+                                                    "label": "Modification",
+                                                    "description": "The licensed material may be modified."
+                                                },
+                                                {
+                                                    "tag": "distribution",
+                                                    "label": "Distribution",
+                                                    "description": "The licensed material may be distributed."
+                                                },
+                                                {
+                                                    "tag": "private-use",
+                                                    "label": "Private use",
+                                                    "description": "The licensed material may be used and modified in private."
+                                                }
+                                            ],
+                                            "conditions": [
+                                                {
+                                                    "tag": "include-copyright",
+                                                    "label": "License and copyright notice",
+                                                    "description": "A copy of the license and copyright notice must be included with the licensed material."
+                                                }
+                                            ],
+                                            "limitations": [
+                                                {
+                                                    "tag": "liability",
+                                                    "label": "Liability",
+                                                    "description": "This license includes a limitation of liability."
+                                                },
+                                                {
+                                                    "tag": "warranty",
+                                                    "label": "Warranty",
+                                                    "description": "This license explicitly states that it does NOT provide any warranty."
+                                                }
+                                            ]
+                                        },
+                                        "fields": [
+                                            {
+                                                "name": "year",
+                                                "description": "The current year"
+                                            },
+                                            {
+                                                "name": "fullname",
+                                                "description": "The full name or username of the repository owner"
+                                            }
+                                        ],
+                                        "other": false,
+                                        "gpl": false,
+                                        "lgpl": false,
+                                        "cc": false
+                                    }
+                                ],
+                                "matched_files": [
+                                    {
+                                        "filename": "LICENSE",
+                                        "content": "MIT License\n\nCopyright 2024 Thomas Ulrich\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \u201cSoftware\u201d), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \u201cAS IS\u201d, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+                                        "content_hash": "4c2c763d64bbc7ef2e58b0ec6d06d90cee9755c9",
+                                        "content_normalized": "permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'software'), to deal in the software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: the above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. the software is provided 'as is', without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.",
+                                        "matcher": {
+                                            "name": "exact",
+                                            "confidence": 100
+                                        },
+                                        "matched_license": "MIT",
+                                        "attribution": "Copyright 2024 Thomas Ulrich"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 4,
+                "success_subcriteria": 4
+            }
+        },
+        "QC.Sec": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Found security weaknesses when performing SAST checks with bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec github.com/Thomas-Ulrich/rapid-earthquake-dynamics bandit",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [],\n  \"generated_at\": \"2025-06-06T09:06:16Z\",\n  \"metrics\": {\n    \"./dynworkflow/__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 0,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/add_source_files_to_waveform_config.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 20,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/compile_scenario_macro_properties.py\": {\n      \"CONFIDENCE.HIGH\": 6,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 3,\n      \"SEVERITY.MEDIUM\": 3,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 570,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/compute_gof_fault_slip.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 131,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/compute_percentage_supershear.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 80,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/estimate_nucleation_radius.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 204,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/generate_input_seissol_dr.py\": {\n      \"CONFIDENCE.HIGH\": 7,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 6,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 321,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/generate_input_seissol_fl33.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 43,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/generate_mesh.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 185,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/generate_velocity_model_files_slipnear.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 3,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/generate_waveform_config_from_usgs.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 61,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/get_repo_info.py\": {\n      \"CONFIDENCE.HIGH\": 12,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 12,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 175,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/get_usgs_finite_fault_data.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 5,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 5,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 193,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/infer_fault_mesh_size_and_spatial_zoom.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 83,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/prepare_velocity_model_files.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 124,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dynworkflow/vizualizeBoundaryConditions.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 118,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/asagiwriter.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 43,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/compute_moment_rate_from_finite_fault_file.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 82,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/fault_plane.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 762,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/generate_FL33_input_files.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 92,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/generate_fault_output_from_fl33_input_files.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 157,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/multi_fault_plane.py\": {\n      \"CONFIDENCE.HIGH\": 9,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 9,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 599,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/project_fault_tractions_onto_asagi_grid.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 265,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/refine_srf.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 104,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./kinematic_models/stf.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 1,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 99,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./step1_model_setup.py\": {\n      \"CONFIDENCE.HIGH\": 9,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 9,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 436,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./step2_generate_dr_input_files.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 25,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./step3_launch_dr_jobs.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 1,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 18,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./tests/test_generate_input_seissol_dr.py\": {\n      \"CONFIDENCE.HIGH\": 4,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 4,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 61,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./tests/test_generate_mesh.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 19,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./tests/test_get_usgs_finite_fault_data.py\": {\n      \"CONFIDENCE.HIGH\": 5,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 5,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 36,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 62,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 5,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 5,\n      \"SEVERITY.LOW\": 54,\n      \"SEVERITY.MEDIUM\": 8,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 5109,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": [\n    {\n      \"code\": \"13     templateLoader = jinja2.FileSystemLoader(searchpath=current_directory)\\n14     templateEnv = jinja2.Environment(loader=templateLoader)\\n15 \\n\",\n      \"col_offset\": 18,\n      \"filename\": \"./dynworkflow/add_source_files_to_waveform_config.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 94,\n        \"link\": \"https://cwe.mitre.org/data/definitions/94.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.\",\n      \"line_number\": 14,\n      \"line_range\": [\n        14\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html\",\n      \"test_id\": \"B701\",\n      \"test_name\": \"jinja2_autoescape_false\"\n    },\n    {\n      \"code\": \"241     templateLoader = jinja2.FileSystemLoader(searchpath=input_file_dir)\\n242     templateEnv = jinja2.Environment(loader=templateLoader)\\n243 \\n\",\n      \"col_offset\": 18,\n      \"filename\": \"./dynworkflow/generate_input_seissol_dr.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 94,\n        \"link\": \"https://cwe.mitre.org/data/definitions/94.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.\",\n      \"line_number\": 242,\n      \"line_range\": [\n        242\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html\",\n      \"test_id\": \"B701\",\n      \"test_name\": \"jinja2_autoescape_false\"\n    },\n    {\n      \"code\": \"20     templateLoader = jinja2.FileSystemLoader(searchpath=input_file_dir)\\n21     templateEnv = jinja2.Environment(loader=templateLoader)\\n22 \\n\",\n      \"col_offset\": 18,\n      \"filename\": \"./dynworkflow/generate_input_seissol_fl33.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 94,\n        \"link\": \"https://cwe.mitre.org/data/definitions/94.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.\",\n      \"line_number\": 21,\n      \"line_range\": [\n        21\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html\",\n      \"test_id\": \"B701\",\n      \"test_name\": \"jinja2_autoescape_false\"\n    },\n    {\n      \"code\": \"41     templateLoader = jinja2.FileSystemLoader(searchpath=input_file_dir)\\n42     templateEnv = jinja2.Environment(loader=templateLoader)\\n43     if stations == \\\"auto\\\":\\n\",\n      \"col_offset\": 18,\n      \"filename\": \"./dynworkflow/generate_waveform_config_from_usgs.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 94,\n        \"link\": \"https://cwe.mitre.org/data/definitions/94.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.\",\n      \"line_number\": 42,\n      \"line_range\": [\n        42\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html\",\n      \"test_id\": \"B701\",\n      \"test_name\": \"jinja2_autoescape_false\"\n    },\n    {\n      \"code\": \"31     print(command)\\n32     os.system(command)\\n\",\n      \"col_offset\": 4,\n      \"filename\": \"./step3_launch_dr_jobs.py\",\n      \"issue_confidence\": \"HIGH\",\n      \"issue_cwe\": {\n        \"id\": 78,\n        \"link\": \"https://cwe.mitre.org/data/definitions/78.html\"\n      },\n      \"issue_severity\": \"HIGH\",\n      \"issue_text\": \"Starting a process with a shell, possible injection detected, security issue.\",\n      \"line_number\": 32,\n      \"line_range\": [\n        32\n      ],\n      \"more_info\": \"https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html\",\n      \"test_id\": \"B605\",\n      \"test_name\": \"start_process_with_a_shell\"\n    }\n  ]\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [],
+                                "generated_at": "2025-06-06T09:06:16Z",
+                                "metrics": {
+                                    "./dynworkflow/__init__.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 0,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/add_source_files_to_waveform_config.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 20,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/compile_scenario_macro_properties.py": {
+                                        "CONFIDENCE.HIGH": 6,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 3,
+                                        "SEVERITY.MEDIUM": 3,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 570,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/compute_gof_fault_slip.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 131,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/compute_percentage_supershear.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 80,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/estimate_nucleation_radius.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 204,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/generate_input_seissol_dr.py": {
+                                        "CONFIDENCE.HIGH": 7,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 6,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 321,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/generate_input_seissol_fl33.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 43,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/generate_mesh.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 185,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/generate_velocity_model_files_slipnear.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 3,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/generate_waveform_config_from_usgs.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 61,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/get_repo_info.py": {
+                                        "CONFIDENCE.HIGH": 12,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 12,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 175,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/get_usgs_finite_fault_data.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 5,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 5,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 193,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/infer_fault_mesh_size_and_spatial_zoom.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 83,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/prepare_velocity_model_files.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 124,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dynworkflow/vizualizeBoundaryConditions.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 118,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/asagiwriter.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 43,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/compute_moment_rate_from_finite_fault_file.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 82,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/fault_plane.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 762,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/generate_FL33_input_files.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 92,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/generate_fault_output_from_fl33_input_files.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 157,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/multi_fault_plane.py": {
+                                        "CONFIDENCE.HIGH": 9,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 9,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 599,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/project_fault_tractions_onto_asagi_grid.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 265,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/refine_srf.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 104,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./kinematic_models/stf.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 1,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 99,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./step1_model_setup.py": {
+                                        "CONFIDENCE.HIGH": 9,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 9,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 436,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./step2_generate_dr_input_files.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 25,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./step3_launch_dr_jobs.py": {
+                                        "CONFIDENCE.HIGH": 1,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 1,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 18,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./tests/test_generate_input_seissol_dr.py": {
+                                        "CONFIDENCE.HIGH": 4,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 4,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 61,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./tests/test_generate_mesh.py": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 2,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 19,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./tests/test_get_usgs_finite_fault_data.py": {
+                                        "CONFIDENCE.HIGH": 5,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 5,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 36,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 62,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 5,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 5,
+                                        "SEVERITY.LOW": 54,
+                                        "SEVERITY.MEDIUM": 8,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 5109,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": [
+                                    {
+                                        "code": "13     templateLoader = jinja2.FileSystemLoader(searchpath=current_directory)\n14     templateEnv = jinja2.Environment(loader=templateLoader)\n15 \n",
+                                        "col_offset": 18,
+                                        "filename": "./dynworkflow/add_source_files_to_waveform_config.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 94,
+                                            "link": "https://cwe.mitre.org/data/definitions/94.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.",
+                                        "line_number": 14,
+                                        "line_range": [
+                                            14
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html",
+                                        "test_id": "B701",
+                                        "test_name": "jinja2_autoescape_false"
+                                    },
+                                    {
+                                        "code": "241     templateLoader = jinja2.FileSystemLoader(searchpath=input_file_dir)\n242     templateEnv = jinja2.Environment(loader=templateLoader)\n243 \n",
+                                        "col_offset": 18,
+                                        "filename": "./dynworkflow/generate_input_seissol_dr.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 94,
+                                            "link": "https://cwe.mitre.org/data/definitions/94.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.",
+                                        "line_number": 242,
+                                        "line_range": [
+                                            242
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html",
+                                        "test_id": "B701",
+                                        "test_name": "jinja2_autoescape_false"
+                                    },
+                                    {
+                                        "code": "20     templateLoader = jinja2.FileSystemLoader(searchpath=input_file_dir)\n21     templateEnv = jinja2.Environment(loader=templateLoader)\n22 \n",
+                                        "col_offset": 18,
+                                        "filename": "./dynworkflow/generate_input_seissol_fl33.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 94,
+                                            "link": "https://cwe.mitre.org/data/definitions/94.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.",
+                                        "line_number": 21,
+                                        "line_range": [
+                                            21
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html",
+                                        "test_id": "B701",
+                                        "test_name": "jinja2_autoescape_false"
+                                    },
+                                    {
+                                        "code": "41     templateLoader = jinja2.FileSystemLoader(searchpath=input_file_dir)\n42     templateEnv = jinja2.Environment(loader=templateLoader)\n43     if stations == \"auto\":\n",
+                                        "col_offset": 18,
+                                        "filename": "./dynworkflow/generate_waveform_config_from_usgs.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 94,
+                                            "link": "https://cwe.mitre.org/data/definitions/94.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.",
+                                        "line_number": 42,
+                                        "line_range": [
+                                            42
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b701_jinja2_autoescape_false.html",
+                                        "test_id": "B701",
+                                        "test_name": "jinja2_autoescape_false"
+                                    },
+                                    {
+                                        "code": "31     print(command)\n32     os.system(command)\n",
+                                        "col_offset": 4,
+                                        "filename": "./step3_launch_dr_jobs.py",
+                                        "issue_confidence": "HIGH",
+                                        "issue_cwe": {
+                                            "id": 78,
+                                            "link": "https://cwe.mitre.org/data/definitions/78.html"
+                                        },
+                                        "issue_severity": "HIGH",
+                                        "issue_text": "Starting a process with a shell, possible injection detected, security issue.",
+                                        "line_number": 32,
+                                        "line_range": [
+                                            32
+                                        ],
+                                        "more_info": "https://bandit.readthedocs.io/en/1.7.4/plugins/b605_start_process_with_a_shell.html",
+                                        "test_id": "B605",
+                                        "test_name": "start_process_with_a_shell"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sty": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Sty01": {
+                    "description": "Is the software product following a style standard for Python files?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the linter tool",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Python files are compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-flake8",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "flake8",
+                                "lang": "Python",
+                                "version": "4.0.1 (mccabe: 0.6.1, pycodestyle: 2.8.0, pyflakes: 2.4.0)",
+                                "docker": {
+                                    "image": "pipelinecomponents/flake8:0.9.0",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/Thomas-Ulrich/rapid-earthquake-dynamics flake8",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "flake8 ."
+                                    ],
+                                    "stdout_text": "",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/88/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": ""
+                        },
+                        {
+                            "valid": true,
+                            "message": "JSON files are compliant with jsonlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "jsonlint",
+                                "lang": "JSON",
+                                "version": "1.6.3",
+                                "docker": {
+                                    "dockerfile": "QC.Sty/jsonlint/Dockerfile",
+                                    "reviewed": "2021-11-23"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/Thomas-Ulrich/rapid-earthquake-dynamics jsonlint",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "jsonlint-cli \"**/*.json\""
+                                    ],
+                                    "stdout_text": "",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/97/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Uni": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Uni01": {
+                    "description": "Are the tests passing through an automated means?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the failing test cases found by the {tool_name} tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Test cases are not passing using None testing framework",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
+                                },
+                                "ci": {
+                                    "name": "QC.Uni github.com/Thomas-Ulrich/rapid-earthquake-dynamics pytest",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "pytest  --json-report  --json-report-indent 4"
+                                    ],
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/github.com/Thomas-Ulrich/rapid-earthquake-dynamics\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items / 3 errors\n\n==================================== ERRORS ====================================\n___________ ERROR collecting tests/test_generate_input_seissol_dr.py ___________\nImportError while importing test module '/sqaaas-build/github.com/Thomas-Ulrich/rapid-earthquake-dynamics/tests/test_generate_input_seissol_dr.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests/test_generate_input_seissol_dr.py:7: in <module>\n    import yaml\nE   ModuleNotFoundError: No module named 'yaml'\n_________________ ERROR collecting tests/test_generate_mesh.py _________________\nImportError while importing test module '/sqaaas-build/github.com/Thomas-Ulrich/rapid-earthquake-dynamics/tests/test_generate_mesh.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests/test_generate_mesh.py:8: in <module>\n    from dynworkflow.generate_mesh import generate\nE   ModuleNotFoundError: No module named 'dynworkflow'\n__________ ERROR collecting tests/test_get_usgs_finite_fault_data.py ___________\nImportError while importing test module '/sqaaas-build/github.com/Thomas-Ulrich/rapid-earthquake-dynamics/tests/test_get_usgs_finite_fault_data.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/usr/local/lib/python3.9/importlib/__init__.py:127: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests/test_get_usgs_finite_fault_data.py:8: in <module>\n    from dynworkflow.get_usgs_finite_fault_data import get_data\nE   ModuleNotFoundError: No module named 'dynworkflow'\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n=========================== short test summary info ============================\nERROR tests/test_generate_input_seissol_dr.py\nERROR tests/test_generate_mesh.py\nERROR tests/test_get_usgs_finite_fault_data.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 3 errors during collection !!!!!!!!!!!!!!!!!!!!\n============================== 3 errors in 0.96s ===============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Ver": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Ver01.0": {
+                    "description": "Are tags being used for releasing software",
+                    "requirement_level": "MUST",
+                    "hint": "Git tags are a convenient way to release software. This subcriterion checks if any git tag is present in the code history. More info on it-scm.com/book/en/v2/Git-Basics-Tagging\" target=\"_blank\">git tagging</a>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "The code repository uses tags for releasing new software versions",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/Thomas-Ulrich/rapid-earthquake-dynamics get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v0.1.1', 'v0.1.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v0.1.1",
+                                "v0.1.0"
+                            ]
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Ver01": {
+                    "description": "Is the latest release compliant with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Latest tag must be compliant with <a href=\"https://semver.org\" target=\"_blank\">SemVer specification</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Latest release tag v0.1.1 found, but is not SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/Thomas-Ulrich/rapid-earthquake-dynamics get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v0.1.1', 'v0.1.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v0.1.1",
+                                "v0.1.0"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver02": {
+                    "description": "Are all release tags with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Existent release tags shall be <a href=\"https://semver.org\" target=\"_blank\">SemVer</a> compliant for this subcriterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Not all release tags are SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/Thomas-Ulrich/rapid-earthquake-dynamics get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v0.1.1', 'v0.1.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/rapid-earthquake-dynamics.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/rapid-earthquake-dynamics.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v0.1.1",
+                                "v0.1.0"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 33,
+                "total_subcriteria": 3,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Met": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Met01": {
+                    "description": "Is the software citable?",
+                    "valid": false,
+                    "hint": "The two formats for software citation supported by SQAaaS are: 1) <a href=\"https://codemeta.github.io/\" target=\"_blank\">CodeMeta</a> and 2) <a href=\"https://citation-file-format.github.io/\" target=\"_blank\">Citation File Format (CFF)</a>. While CodeMeta provides you with a more comprehensive description, CFF is a more lightweight, good-enough approach to software (with built-in support by GitHub) citation. Both provide tools (<a href=\"https://codemeta.github.io/codemeta-generator/\" target=\"_blank\">CodeMeta generator</a>, <a href=\"https://citation-file-format.github.io/cff-initializer-javascript/#/\" target=\"_blank\">CFFINIT</a>)to easily generate a working citation file. Once having the file, be sure to add it to the root path of your code repo.",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "No matching files found for language <CodeMeta> in repository searching by extensions or filenames\nNo matching files found for language <Citation File Format> in repository searching by extensions or filenames"
+                        }
+                    ],
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        }
+    },
+    "badge": {
+        "software": {
+            "criteria": {
+                "bronze": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Doc"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc",
+                        "QC.Lic"
+                    ]
+                },
+                "silver": {
+                    "to_fulfill": [
+                        "QC.Met",
+                        "QC.Ver",
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Met"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc",
+                        "QC.Lic",
+                        "QC.Ver"
+                    ]
+                },
+                "gold": {
+                    "to_fulfill": [
+                        "QC.Sty",
+                        "QC.Uni",
+                        "QC.Met",
+                        "QC.Sec",
+                        "QC.Ver",
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Uni",
+                        "QC.Met",
+                        "QC.Sec",
+                        "QC.Doc"
+                    ],
+                    "fulfilled": [
+                        "QC.Ver",
+                        "QC.Acc",
+                        "QC.Lic",
+                        "QC.Sty"
+                    ]
+                }
+            },
+            "data": {}
+        }
+    }
+}
